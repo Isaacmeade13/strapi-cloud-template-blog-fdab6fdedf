@@ -673,6 +673,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     singularName: 'location';
     pluralName: 'locations';
     displayName: 'Locations';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -680,7 +681,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
   attributes: {
     name: Schema.Attribute.String;
     types: Schema.Attribute.Relation<'manyToMany', 'api::type.type'>;
-    Images: Schema.Attribute.Media<'images', true>;
+    images: Schema.Attribute.Media<'images', true>;
     logo: Schema.Attribute.Media<'images'>;
     price: Schema.Attribute.Decimal;
     guest: Schema.Attribute.Integer;

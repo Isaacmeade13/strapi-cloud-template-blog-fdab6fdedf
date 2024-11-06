@@ -4,7 +4,8 @@
   "info": {
     "singularName": "location",
     "pluralName": "locations",
-    "displayName": "Locations"
+    "displayName": "Locations",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -20,19 +21,21 @@
       "target": "api::type.type",
       "inversedBy": "locations"
     },
-    "Images": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "price": {
       "type": "decimal"
