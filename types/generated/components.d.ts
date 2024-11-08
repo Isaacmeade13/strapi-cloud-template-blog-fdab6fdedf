@@ -62,6 +62,30 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonText extends Struct.ComponentSchema {
+  collectionName: 'components_common_texts';
+  info: {
+    displayName: 'Text';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface CommonAvailabilityText extends Struct.ComponentSchema {
+  collectionName: 'components_common_availability_texts';
+  info: {
+    displayName: 'AvailabilityText';
+    description: '';
+  };
+  attributes: {
+    isAvailable: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    text: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -70,6 +94,8 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'common.text': CommonText;
+      'common.availability-text': CommonAvailabilityText;
     }
   }
 }

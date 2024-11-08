@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_common_availability_texts",
+  "info": {
+    "displayName": "AvailabilityText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "isAvailable": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

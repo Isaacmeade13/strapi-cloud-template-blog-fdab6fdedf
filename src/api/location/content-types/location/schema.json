@@ -38,7 +38,8 @@
       ]
     },
     "price": {
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "guest": {
       "type": "integer"
@@ -49,7 +50,7 @@
       "required": true
     },
     "benefit": {
-      "type": "string"
+      "type": "text"
     },
     "address": {
       "type": "string"
@@ -57,6 +58,89 @@
     "currency": {
       "type": "string",
       "default": "£"
+    },
+    "cateringAndDrinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "tablesAndSeating": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "alcoholicBeverages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "restrooms": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "musicAndAV": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "allowedEvents": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "accommodation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "parking": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "event": {
+      "type": "component",
+      "repeatable": false,
+      "component": "common.availability-text",
+      "required": true
+    },
+    "hostName": {
+      "type": "string",
+      "required": true
+    },
+    "sqlft": {
+      "type": "integer"
+    },
+    "about": {
+      "type": "text"
+    },
+    "locationImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "policeText": {
+      "type": "text"
+    },
+    "spaceIncludes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.text"
+    },
+    "hour": {
+      "type": "integer"
     }
   }
 }

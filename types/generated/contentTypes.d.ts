@@ -683,14 +683,54 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     types: Schema.Attribute.Relation<'manyToMany', 'api::type.type'>;
     images: Schema.Attribute.Media<'images', true>;
     logo: Schema.Attribute.Media<'images'>;
-    price: Schema.Attribute.Decimal;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     guest: Schema.Attribute.Integer;
     isSuperHost: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    benefit: Schema.Attribute.String;
+    benefit: Schema.Attribute.Text;
     address: Schema.Attribute.String;
     currency: Schema.Attribute.String & Schema.Attribute.DefaultTo<'\u00A3'>;
+    cateringAndDrinks: Schema.Attribute.Component<
+      'common.availability-text',
+      false
+    > &
+      Schema.Attribute.Required;
+    tablesAndSeating: Schema.Attribute.Component<
+      'common.availability-text',
+      false
+    > &
+      Schema.Attribute.Required;
+    alcoholicBeverages: Schema.Attribute.Component<
+      'common.availability-text',
+      false
+    > &
+      Schema.Attribute.Required;
+    restrooms: Schema.Attribute.Component<'common.availability-text', false> &
+      Schema.Attribute.Required;
+    musicAndAV: Schema.Attribute.Component<'common.availability-text', false> &
+      Schema.Attribute.Required;
+    allowedEvents: Schema.Attribute.Component<
+      'common.availability-text',
+      false
+    > &
+      Schema.Attribute.Required;
+    accommodation: Schema.Attribute.Component<
+      'common.availability-text',
+      false
+    > &
+      Schema.Attribute.Required;
+    parking: Schema.Attribute.Component<'common.availability-text', false> &
+      Schema.Attribute.Required;
+    event: Schema.Attribute.Component<'common.availability-text', false> &
+      Schema.Attribute.Required;
+    hostName: Schema.Attribute.String & Schema.Attribute.Required;
+    sqlft: Schema.Attribute.Integer;
+    about: Schema.Attribute.Text;
+    locationImage: Schema.Attribute.Media<'images'>;
+    policeText: Schema.Attribute.Text;
+    spaceIncludes: Schema.Attribute.Component<'common.text', true>;
+    hour: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
