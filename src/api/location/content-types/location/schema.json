@@ -141,6 +141,12 @@
     },
     "hour": {
       "type": "integer"
+    },
+    "location_names": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location-name.location-name",
+      "mappedBy": "location"
     }
   }
 }

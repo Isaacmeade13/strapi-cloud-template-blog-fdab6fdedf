@@ -731,6 +731,10 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     policeText: Schema.Attribute.Text;
     spaceIncludes: Schema.Attribute.Component<'common.text', true>;
     hour: Schema.Attribute.Integer;
+    location_names: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-name.location-name'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -742,6 +746,37 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::location.location'
+    >;
+  };
+}
+
+export interface ApiLocationNameLocationName
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'location_names';
+  info: {
+    singularName: 'location-name';
+    pluralName: 'location-names';
+    displayName: 'LocationNames';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-name.location-name'
     >;
   };
 }
@@ -1159,6 +1194,7 @@ declare module '@strapi/strapi' {
       'api::filter.filter': ApiFilterFilter;
       'api::global.global': ApiGlobalGlobal;
       'api::location.location': ApiLocationLocation;
+      'api::location-name.location-name': ApiLocationNameLocationName;
       'api::type.type': ApiTypeType;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "location_names",
+  "info": {
+    "singularName": "location-name",
+    "pluralName": "location-names",
+    "displayName": "LocationNames"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "location_names"
+    }
+  }
+}
