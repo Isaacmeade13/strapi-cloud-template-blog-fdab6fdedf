@@ -144,9 +144,9 @@
     },
     "location_names": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::location-name.location-name",
-      "mappedBy": "location"
+      "mappedBy": "locations"
     }
   }
 }

@@ -732,7 +732,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     spaceIncludes: Schema.Attribute.Component<'common.text', true>;
     hour: Schema.Attribute.Integer;
     location_names: Schema.Attribute.Relation<
-      'oneToMany',
+      'manyToMany',
       'api::location-name.location-name'
     >;
     createdAt: Schema.Attribute.DateTime;
@@ -765,7 +765,10 @@ export interface ApiLocationNameLocationName
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    locations: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::location.location'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

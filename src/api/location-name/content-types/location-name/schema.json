@@ -16,9 +16,9 @@
       "required": true,
       "unique": true
     },
-    "location": {
+    "locations": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::location.location",
       "inversedBy": "location_names"
     }
