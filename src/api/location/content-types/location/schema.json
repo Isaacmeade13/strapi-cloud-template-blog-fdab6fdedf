@@ -47,7 +47,7 @@
     "isSuperHost": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": false
     },
     "benefit": {
       "type": "text"
@@ -147,6 +147,10 @@
       "relation": "manyToMany",
       "target": "api::location-name.location-name",
       "mappedBy": "locations"
+    },
+    "inflexible": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

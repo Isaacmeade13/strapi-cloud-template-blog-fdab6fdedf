@@ -685,9 +685,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     logo: Schema.Attribute.Media<'images'>;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     guest: Schema.Attribute.Integer;
-    isSuperHost: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
+    isSuperHost: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     benefit: Schema.Attribute.Text;
     address: Schema.Attribute.String;
     currency: Schema.Attribute.String & Schema.Attribute.DefaultTo<'\u00A3'>;
@@ -735,6 +733,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::location-name.location-name'
     >;
+    inflexible: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
