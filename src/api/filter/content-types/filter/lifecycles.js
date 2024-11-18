@@ -8,7 +8,7 @@ module.exports = {
     const fullURL = `${baseURL}${adminPath}`;
     const emailOptions = {
       to: "Info@eventcage.com",
-      subject: `dev-mode --> New entity in Form table`,
+      subject: `dev-mode --> New entity in Form table `,
       text: `full URL: ${fullURL}`,
     };
     try {
