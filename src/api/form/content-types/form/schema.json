@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forms",
+  "info": {
+    "singularName": "form",
+    "pluralName": "forms",
+    "displayName": "Form"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "LocationUrl": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    },
+    "StartTime": {
+      "type": "string"
+    },
+    "EndTime": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

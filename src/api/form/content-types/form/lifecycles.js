@@ -9,7 +9,7 @@ module.exports = {
     const emailOptions = {
       to: "Info@eventcage.com",
       subject: `dev-mode --> New entity in Form table `,
-      text: `full URL: ${fullURL}`,
+      text: `New entity in ->  ${fullURL}`,
     };
     try {
       await strapi.plugin("email").service("email").send(emailOptions);
