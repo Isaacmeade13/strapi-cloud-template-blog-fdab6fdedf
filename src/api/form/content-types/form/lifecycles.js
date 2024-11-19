@@ -3,7 +3,7 @@ module.exports = {
     const { result } = event;
 
     const documentId = result?.documentId;
-    const adminPath = `/admin/content-manager/collection-types/api::filter.filter/${documentId}`;
+    const adminPath = `/admin/content-manager/collection-types/api::form.form/${documentId}`;
     const baseURL = process.env.URL || "http://localhost:1337";
     const fullURL = `${baseURL}${adminPath}`;
     const emailOptions = {
