@@ -157,6 +157,9 @@
       "relation": "manyToMany",
       "target": "api::activity.activity",
       "inversedBy": "locations"
+    },
+    "policyDaysCount": {
+      "type": "integer"
     }
   }
 }
