@@ -21,6 +21,12 @@
       "relation": "manyToMany",
       "target": "api::location.location",
       "mappedBy": "activities"
+    },
+    "form_onboards": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::form-onboard.form-onboard",
+      "mappedBy": "activities"
     }
   }
 }

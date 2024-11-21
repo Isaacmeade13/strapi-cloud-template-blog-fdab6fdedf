@@ -531,6 +531,10 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::location.location'
     >;
+    form_onboards: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::form-onboard.form-onboard'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -701,6 +705,49 @@ export interface ApiFormForm extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFormOnboardFormOnboard extends Struct.CollectionTypeSchema {
+  collectionName: 'form_onboards';
+  info: {
+    singularName: 'form-onboard';
+    pluralName: 'form-onboards';
+    displayName: 'FormOnboard';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    types: Schema.Attribute.Relation<'manyToMany', 'api::type.type'>;
+    activities: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::activity.activity'
+    >;
+    address: Schema.Attribute.Text;
+    cancellationPolicy: Schema.Attribute.Text;
+    companyName: Schema.Attribute.Text;
+    contactInformation: Schema.Attribute.Text;
+    diningCapacity: Schema.Attribute.Text;
+    minimumCancellationDuration: Schema.Attribute.Text;
+    operationalHours: Schema.Attribute.Text;
+    pricingModel: Schema.Attribute.Text;
+    seatingCapacity: Schema.Attribute.Text;
+    spaceName: Schema.Attribute.Text;
+    standingCapacity: Schema.Attribute.Text;
+    venueDescription: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::form-onboard.form-onboard'
+    >;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -868,6 +915,10 @@ export interface ApiTypeType extends Struct.CollectionTypeSchema {
     locations: Schema.Attribute.Relation<
       'manyToMany',
       'api::location.location'
+    >;
+    form_onboards: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::form-onboard.form-onboard'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1263,6 +1314,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::filter.filter': ApiFilterFilter;
       'api::form.form': ApiFormForm;
+      'api::form-onboard.form-onboard': ApiFormOnboardFormOnboard;
       'api::global.global': ApiGlobalGlobal;
       'api::location.location': ApiLocationLocation;
       'api::location-name.location-name': ApiLocationNameLocationName;

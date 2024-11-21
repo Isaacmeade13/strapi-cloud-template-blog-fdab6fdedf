@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_onboards",
+  "info": {
+    "singularName": "form-onboard",
+    "pluralName": "form-onboards",
+    "displayName": "FormOnboard"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type.type",
+      "inversedBy": "form_onboards"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activity.activity",
+      "inversedBy": "form_onboards"
+    },
+    "address": {
+      "type": "text"
+    },
+    "cancellationPolicy": {
+      "type": "text"
+    },
+    "companyName": {
+      "type": "text"
+    },
+    "contactInformation": {
+      "type": "text"
+    },
+    "diningCapacity": {
+      "type": "text"
+    },
+    "minimumCancellationDuration": {
+      "type": "text"
+    },
+    "operationalHours": {
+      "type": "text"
+    },
+    "pricingModel": {
+      "type": "text"
+    },
+    "seatingCapacity": {
+      "type": "text"
+    },
+    "spaceName": {
+      "type": "text"
+    },
+    "standingCapacity": {
+      "type": "text"
+    },
+    "venueDescription": {
+      "type": "text"
+    }
+  }
+}
