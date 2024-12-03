@@ -793,7 +793,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     images: Schema.Attribute.Media<'images', true>;
     logo: Schema.Attribute.Media<'images'>;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
-    guest: Schema.Attribute.Integer;
+    guests: Schema.Attribute.Integer;
     isSuperHost: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     benefit: Schema.Attribute.Text;
     address: Schema.Attribute.String;

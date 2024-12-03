@@ -41,7 +41,7 @@
       "type": "decimal",
       "required": true
     },
-    "guest": {
+    "guests": {
       "type": "integer"
     },
     "isSuperHost": {
