@@ -519,9 +519,10 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
     singularName: 'activity';
     pluralName: 'activities';
     displayName: 'Activity';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Schema.Attribute.String &

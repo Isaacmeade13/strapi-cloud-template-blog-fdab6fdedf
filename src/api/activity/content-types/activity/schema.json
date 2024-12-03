@@ -4,10 +4,11 @@
   "info": {
     "singularName": "activity",
     "pluralName": "activities",
-    "displayName": "Activity"
+    "displayName": "Activity",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
