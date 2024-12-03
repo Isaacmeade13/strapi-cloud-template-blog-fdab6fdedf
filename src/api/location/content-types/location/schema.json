@@ -131,7 +131,7 @@
         "images"
       ]
     },
-    "policeText": {
+    "policyText": {
       "type": "text"
     },
     "spaceIncludes": {

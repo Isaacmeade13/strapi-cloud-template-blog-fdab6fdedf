@@ -835,7 +835,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     sqlft: Schema.Attribute.Integer;
     about: Schema.Attribute.Text;
     locationImage: Schema.Attribute.Media<'images'>;
-    policeText: Schema.Attribute.Text;
+    policyText: Schema.Attribute.Text;
     spaceIncludes: Schema.Attribute.Component<'common.text', true>;
     hour: Schema.Attribute.Integer;
     location_names: Schema.Attribute.Relation<
