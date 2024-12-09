@@ -4,7 +4,8 @@
   "info": {
     "singularName": "form-onboard",
     "pluralName": "form-onboards",
-    "displayName": "FormOnboard"
+    "displayName": "FormOnboard",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -15,12 +16,6 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::type.type",
-      "inversedBy": "form_onboards"
-    },
-    "activities": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::activity.activity",
       "inversedBy": "form_onboards"
     },
     "address": {
@@ -57,6 +52,9 @@
       "type": "text"
     },
     "venueDescription": {
+      "type": "text"
+    },
+    "activities": {
       "type": "text"
     }
   }

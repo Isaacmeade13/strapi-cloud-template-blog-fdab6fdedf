@@ -532,10 +532,6 @@ export interface ApiActivityActivity extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::location.location'
     >;
-    form_onboards: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::form-onboard.form-onboard'
-    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -712,16 +708,13 @@ export interface ApiFormOnboardFormOnboard extends Struct.CollectionTypeSchema {
     singularName: 'form-onboard';
     pluralName: 'form-onboards';
     displayName: 'FormOnboard';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
     types: Schema.Attribute.Relation<'manyToMany', 'api::type.type'>;
-    activities: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::activity.activity'
-    >;
     address: Schema.Attribute.Text;
     cancellationPolicy: Schema.Attribute.Text;
     companyName: Schema.Attribute.Text;
@@ -734,6 +727,7 @@ export interface ApiFormOnboardFormOnboard extends Struct.CollectionTypeSchema {
     spaceName: Schema.Attribute.Text;
     standingCapacity: Schema.Attribute.Text;
     venueDescription: Schema.Attribute.Text;
+    activities: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -782,7 +776,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'location';
     pluralName: 'locations';
-    displayName: 'Locations';
+    displayName: 'Venue';
     description: '';
   };
   options: {
