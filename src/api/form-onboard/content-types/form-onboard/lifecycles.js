@@ -7,8 +7,8 @@ module.exports = {
     const baseURL = process.env.URL || "http://localhost:1337";
     const fullURL = `${baseURL}${adminPath}`;
     const emailOptions = {
-      to: "Info@eventcage.com",
-      subject: `dev-mode --> New entity in Form Onboard table `,
+      to: "sales@eventcage.com",
+      subject: `New entity in Form Onboard table `,
       text: `New entity in ->  ${fullURL}`,
     };
     try {

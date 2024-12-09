@@ -7,7 +7,7 @@ module.exports = {
     const baseURL = process.env.URL || "http://localhost:1337";
     const fullURL = `${baseURL}${adminPath}`;
     const emailOptions = {
-      to: "Info@eventcage.com",
+      to: "sales@eventcage.com",
       subject: `dev-mode --> New entity in Form table `,
       text: `New entity in ->  ${fullURL}`,
     };
