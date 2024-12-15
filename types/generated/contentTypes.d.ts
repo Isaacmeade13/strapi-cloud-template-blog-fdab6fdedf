@@ -843,6 +843,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
       'api::activity.activity'
     >;
     policyDaysCount: Schema.Attribute.Integer;
+    pricePer: Schema.Attribute.String & Schema.Attribute.DefaultTo<'hr'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
