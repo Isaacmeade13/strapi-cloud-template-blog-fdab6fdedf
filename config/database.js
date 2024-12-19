@@ -31,8 +31,7 @@ module.exports = ({ env }) => {
     postgres: {
       connection: {
         connectionString: env("DATABASE_URL"),
-        host: env("DATABASE_HOST", "%"),
-        // host: env("DATABASE_HOST", "localhost"),
+        host: env("DATABASE_HOST", "localhost"),
         port: env.int("DATABASE_PORT", 5432),
         database: env("DATABASE_NAME", "strapi"),
         user: env("DATABASE_USERNAME", "strapi"),
@@ -49,37 +48,19 @@ module.exports = ({ env }) => {
           ),
         },
         schema: env("DATABASE_SCHEMA", "public"),
-        connectTimeout: 90000,
       },
       pool: {
-        min: 1,
-        max: 50,
-        // min: env.int("DATABASE_POOL_MIN", 2),
-        // max: env.int("DATABASE_POOL_MAX", 10),
-        idleTimeoutMillis: 30000,
-        createTimeoutMillis: 30000,
-        acquireTimeoutMillis: 30000,
+        min: env.int("DATABASE_POOL_MIN", 2),
+        max: env.int("DATABASE_POOL_MAX", 10),
       },
     },
     sqlite: {
-      debug: true,
-      pool: {
-        afterCreate: (conn, done) => {
-          conn.run("PRAGMA foreign_keys = ON", done);
-        },
-        min: 1,
-        max: 1,
-        idleTimeoutMillis: 30000,
-        createTimeoutMillis: 30000,
-        acquireTimeoutMillis: 30000,
-      },
       connection: {
         filename: path.join(
           __dirname,
           "..",
           env("DATABASE_FILENAME", ".tmp/data.db")
         ),
-        connectTimeout: 90000,
       },
       useNullAsDefault: true,
     },
@@ -89,8 +70,7 @@ module.exports = ({ env }) => {
     connection: {
       client,
       ...connections[client],
-      acquireConnectionTimeout: 300000,
-      // acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
+      acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
     },
   };
 };
