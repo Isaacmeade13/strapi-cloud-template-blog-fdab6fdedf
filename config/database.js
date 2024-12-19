@@ -55,12 +55,18 @@ module.exports = ({ env }) => {
       },
     },
     sqlite: {
+      debug: true,
+      pool: {
+        min: 1,
+        max: 1,
+      },
       connection: {
         filename: path.join(
           __dirname,
           "..",
           env("DATABASE_FILENAME", ".tmp/data.db")
         ),
+        connectTimeout: 90000,
       },
       useNullAsDefault: true,
     },
