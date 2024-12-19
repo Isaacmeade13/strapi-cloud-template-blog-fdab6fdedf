@@ -24,7 +24,7 @@ module.exports = ({ env }) => {
         },
       },
       pool: {
-        min: env.int("DATABASE_POOL_MIN", 2),
+        min: env.int(0),
         max: env.int("DATABASE_POOL_MAX", 10),
       },
     },
@@ -50,7 +50,7 @@ module.exports = ({ env }) => {
         schema: env("DATABASE_SCHEMA", "public"),
       },
       pool: {
-        min: env.int("DATABASE_POOL_MIN", 2),
+        min: env.int(0),
         max: env.int("DATABASE_POOL_MAX", 10),
       },
     },
@@ -64,7 +64,7 @@ module.exports = ({ env }) => {
       },
       acquireConnectionTimeout: 1000000,
       pool: {
-        min: 2,
+        min: 0,
         max: 10,
         acquireTimeoutMillis: 300000,
         createTimeoutMillis: 300000,
