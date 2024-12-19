@@ -59,6 +59,10 @@ module.exports = ({ env }) => {
       pool: {
         min: 1,
         max: 1,
+        acquireTimeoutMillis: 300000,
+        afterCreate: (conn, done) => {
+          conn.run("PRAGMA foreign_keys = ON", done);
+        },
       },
       connection: {
         filename: path.join(
