@@ -54,29 +54,29 @@ module.exports = ({ env }) => {
     //     max: env.int("DATABASE_POOL_MAX", 10),
     //   },
     // },
-    sqlite: {
-      connection: {
-        filename: path.join(
-          __dirname,
-          "..",
-          env("DATABASE_FILENAME", ".tmp/data.db")
-        ),
-        debug: false,
-        acquireConnectionTimeout: 600000,
-        pool: {
-          min: 0,
-          max: 100,
-          acquireTimeoutMillis: 300000,
-          createTimeoutMillis: 300000,
-          destroyTimeoutMillis: 50000,
-          idleTimeoutMillis: 300000,
-          reapIntervalMillis: 10000,
-          createRetryIntervalMillis: 2000,
-          propagateCreateError: false,
-        },
-      },
-      useNullAsDefault: true,
-    },
+    // sqlite: {
+    //   connection: {
+    //     filename: path.join(
+    //       __dirname,
+    //       "..",
+    //       env("DATABASE_FILENAME", ".tmp/data.db")
+    //     ),
+    //     debug: false,
+    //     acquireConnectionTimeout: 600000,
+    //     pool: {
+    //       min: 0,
+    //       max: 100,
+    //       acquireTimeoutMillis: 300000,
+    //       createTimeoutMillis: 300000,
+    //       destroyTimeoutMillis: 50000,
+    //       idleTimeoutMillis: 300000,
+    //       reapIntervalMillis: 10000,
+    //       createRetryIntervalMillis: 2000,
+    //       propagateCreateError: false,
+    //     },
+    //   },
+    //   useNullAsDefault: true,
+    // },
   };
 
   return {
