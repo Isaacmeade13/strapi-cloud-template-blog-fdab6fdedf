@@ -70,6 +70,7 @@ module.exports = ({ env }) => {
     connection: {
       client,
       ...connections[client],
+      idleTimeoutMillis: 600000,
       acquireConnectionTimeout: 1000000,
     },
   };
