@@ -24,11 +24,10 @@ module.exports = ({ env }) => {
         },
       },
       pool: {
-        min: 2,
-        max: 30,
+        idleTimeoutMillis: 600000,
         propagateCreateError: false,
-        // min: env.int("DATABASE_POOL_MIN", 2),
-        // max: env.int("DATABASE_POOL_MAX", 10),
+        min: env.int("DATABASE_POOL_MIN", 2),
+        max: env.int("DATABASE_POOL_MAX", 10),
       },
     },
     postgres: {
@@ -53,11 +52,10 @@ module.exports = ({ env }) => {
         schema: env("DATABASE_SCHEMA", "public"),
       },
       pool: {
-        min: 2,
-        max: 30,
+        idleTimeoutMillis: 600000,
         propagateCreateError: false,
-        // min: env.int("DATABASE_POOL_MIN", 2),
-        // max: env.int("DATABASE_POOL_MAX", 10),
+        min: env.int("DATABASE_POOL_MIN", 2),
+        max: env.int("DATABASE_POOL_MAX", 10),
       },
     },
     sqlite: {
@@ -76,8 +74,7 @@ module.exports = ({ env }) => {
     connection: {
       client,
       ...connections[client],
-      acquireConnectionTimeout: 100000,
-      // acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
+      acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
     },
   };
 };
