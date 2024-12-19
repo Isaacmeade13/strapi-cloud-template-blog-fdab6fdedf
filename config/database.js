@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = ({ env }) => {
-  const client = env("DATABASE_CLIENT", "sqlite");
+  const client = env("DATABASE_CLIENT", "mysql");
 
   const connections = {
     mysql: {
@@ -82,8 +82,8 @@ module.exports = ({ env }) => {
     connection: {
       client,
       ...connections[client],
-      propogateError: false,
-      acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 300000),
+      // propogateError: false,
+      // acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 300000),
     },
   };
 };
