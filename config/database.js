@@ -25,7 +25,7 @@ module.exports = ({ env }) => {
       },
       pool: {
         min: 2,
-        max: 20,
+        max: 30,
         // min: env.int("DATABASE_POOL_MIN", 2),
         // max: env.int("DATABASE_POOL_MAX", 10),
       },
@@ -53,7 +53,7 @@ module.exports = ({ env }) => {
       },
       pool: {
         min: 2,
-        max: 20,
+        max: 30,
         // min: env.int("DATABASE_POOL_MIN", 2),
         // max: env.int("DATABASE_POOL_MAX", 10),
       },
