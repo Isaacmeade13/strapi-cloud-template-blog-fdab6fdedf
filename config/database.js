@@ -48,10 +48,16 @@ module.exports = ({ env }) => {
           ),
         },
         schema: env("DATABASE_SCHEMA", "public"),
+        connectTimeout: 90000,
       },
       pool: {
-        min: env.int("DATABASE_POOL_MIN", 2),
-        max: env.int("DATABASE_POOL_MAX", 10),
+        min: 1,
+        max: 50,
+        // min: env.int("DATABASE_POOL_MIN", 2),
+        // max: env.int("DATABASE_POOL_MAX", 10),
+        idleTimeoutMillis: 30000,
+        createTimeoutMillis: 30000,
+        acquireTimeoutMillis: 30000,
       },
     },
     sqlite: {
