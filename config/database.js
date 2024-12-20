@@ -53,7 +53,7 @@ module.exports = ({ env }) => {
         // min: env.int("DATABASE_POOL_MIN", 2),
         // max: env.int("DATABASE_POOL_MAX", 10),
         min: 0,
-        max: 100,
+        // max: 100,
         acquireTimeoutMillis: 300000,
         createTimeoutMillis: 300000,
         destroyTimeoutMillis: 50000,
