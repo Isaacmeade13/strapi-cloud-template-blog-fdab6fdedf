@@ -50,11 +50,15 @@ module.exports = ({ env }) => {
     },
   };
 
-  return {
+  const config = {
     connection: {
       client,
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
     },
   };
+
+  console.log(config)
+
+  return config;
 };
