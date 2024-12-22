@@ -1,6 +1,6 @@
-import path from "path";
+const path = require("path");
 
-export default ({ env }) => {
+module.exports = ({ env }) => {
   const client = env("DATABASE_CLIENT", "sqlite");
 
   const connections = {
@@ -59,7 +59,6 @@ export default ({ env }) => {
         filename: path.join(
           __dirname,
           "..",
-          "..",
           env("DATABASE_FILENAME", ".tmp/data.db")
         ),
       },
@@ -71,7 +70,7 @@ export default ({ env }) => {
     connection: {
       client,
       ...connections[client],
-      acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
+      acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 1000000),
     },
   };
 };
